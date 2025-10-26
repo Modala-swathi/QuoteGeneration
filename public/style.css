@@ -1,0 +1,19 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background: rgb(172, 213, 232);
+    padding: 150px;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background:rgb(133, 162, 216);
+    color:navy;
+    border-radius: 3px;
+    
+    cursor: pointer;
+}
+button:hover{
+    background:rgb(113, 155, 234);
+}
