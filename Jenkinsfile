@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "smart-library"
+        IMAGE_NAME = ""
         CONTAINER_NAME = "smart-library-container"
     }
 
