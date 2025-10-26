@@ -7,8 +7,8 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = ""
-        CONTAINER_NAME = "smart-library-container"
+        IMAGE_NAME = "QG"
+        CONTAINER_NAME = "quote-generation-container"
     }
 
     stages {
