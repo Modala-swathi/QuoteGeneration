@@ -1,8 +1,10 @@
-
 import fetch from "node-fetch";
 import express from "express";
 const app = express();
-const PORT = 4000;
+
+// Use environment variables for flexibility
+const PORT = process.env.PORT || 4000;
+const HOST = process.env.HOST || "0.0.0.0";
 
 app.use(express.static("public"));
 
@@ -18,6 +20,7 @@ app.get("/quote", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+// Listen on all network interfaces
+app.listen(PORT, HOST, () => {
+  console.log(`Server running at http://${HOST}:${PORT}`);
 });

@@ -1,4 +1,4 @@
-# Use an official Node.js runtime as base image
+# Use official Node.js runtime as base image
 FROM node:18
 
 # Set working directory inside container
@@ -14,5 +14,9 @@ COPY . .
 # Expose the app port
 EXPOSE 4000
 
-# Command to run the app
+# Set environment variable for Node to listen on all interfaces
+ENV HOST=0.0.0.0
+ENV PORT=4000
+
+# Start the app
 CMD ["npm", "start"]
