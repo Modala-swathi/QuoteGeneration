@@ -39,7 +39,13 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 bat '''
-                docker ps -q --filter "name=%CONTAINER_NAME%" | findstr . && docker stop %CONTAINER_NAME% && docker rm %CONTAINER_NAME%
+                @echo off
+                REM Stop and remove existing container if it exists
+                for /f "tokens=*" %%i in ('docker ps -q --filter "name=%CONTAINER_NAME%"') do (
+                    docker stop %%i
+                    docker rm %%i
+                )
+                REM Run new container
                 docker run -d -p 4000:4000 --name %CONTAINER_NAME% %IMAGE_NAME%
                 '''
             }
