@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "QG"
+        IMAGE_NAME = "quotegenerator"
         CONTAINER_NAME = "quote-generation-container"
     }
 
